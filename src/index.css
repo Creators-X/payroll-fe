@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+:root {
+  --Blue-linear-1: linear-gradient(
+    180deg,
+    #112d74 0%,
+    #10347b 41.41%,
+    #10347b 56.93%,
+    #0c468a 70.86%,
+    #0a5093 79.7%,
+    #0666a7 92.89%,
+    #0084c2 110.09%
+  );
+}
+
+.blue-linear {
+  background: var(--Blue-linear-1);
+}
