@@ -1,33 +1,29 @@
-import {
-  AiOutlineClose,
-  AiOutlineHome,
-  AiOutlineUser,
-  AiOutlineUserAdd,
-} from "react-icons/ai";
+import { AiOutlineClose } from "react-icons/ai";
 import { IoLogOut } from "react-icons/io5";
 import { MdSupport } from "react-icons/md";
 import { FiSettings } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
-import Button from "./Button";
 import Logo from "../assets/images/logo.svg";
+import { FaWallet } from "react-icons/fa6";
+import { LuLayoutPanelLeft, LuClipboardList } from "react-icons/lu";
 
 const Sidebar = ({ showSideBar, setShowSideBar }) => {
   const getSidebarItems = () => {
     return [
       {
-        name: "Home",
-        icon: <AiOutlineHome size={25} />,
+        name: "Overview",
+        icon: <LuLayoutPanelLeft size={25} />,
         href: "/home",
       },
       {
-        name: "User Profile",
-        icon: <AiOutlineUser size={25} />,
-        href: "/user-profile",
+        name: "Employees’ Records",
+        icon: <LuClipboardList size={25} />,
+        href: "/employee-record",
       },
       {
-        name: "Add User",
-        icon: <AiOutlineUserAdd size={25} />,
-        href: "/add-user",
+        name: "Salary Management",
+        icon: <FaWallet size={25} />,
+        href: "/salary-management",
       },
     ];
   };
@@ -41,11 +37,12 @@ const Sidebar = ({ showSideBar, setShowSideBar }) => {
     >
       <div className="w-full relative">
         {showSideBar && (
-          <Button
-            className="p-[15px] bg-slate-200 z-[2] text-xl absolute right-0"
-            label={<AiOutlineClose size={25} />}
+          <button
+            className="p-2 bg-slate-200 z-[2] text-xl absolute right-2 top-2 rounded-[50%]"
             onClick={() => setShowSideBar(!showSideBar)}
-          />
+          >
+            <AiOutlineClose size={20} />
+          </button>
         )}
       </div>
       <div className="w-full flex flex-col gap-[45px] py-[15px] relative min-h-screen">
@@ -77,12 +74,18 @@ const Sidebar = ({ showSideBar, setShowSideBar }) => {
             >
               <FiSettings size={25} /> Settings
             </Link>
-            <p className="flex text-white text-xl gap-4 w-full items-center justify-start p-[15px]">
+            <Link
+              to=""
+              className="flex text-white text-xl gap-4 w-full items-center justify-start p-[15px]"
+            >
               <MdSupport size={25} /> Support
-            </p>
-            <p className="flex text-white text-xl gap-4 w-full items-center justify-start p-[15px]">
+            </Link>
+            <Link
+              to=""
+              className="flex text-white text-xl gap-4 w-full items-center justify-start p-[15px]"
+            >
               <IoLogOut size={25} /> Log Out
-            </p>
+            </Link>
           </div>
         </div>
       </div>

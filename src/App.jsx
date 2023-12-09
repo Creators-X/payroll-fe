@@ -8,14 +8,14 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<AuthLayout />}>
-        {routes.map((routeEl, index) => {
-          console.log(<Route {...routeEl} />);
-          return <Route {...routeEl} />;
+        {routes.map((routeEl) => {
+          return <Route key={routeEl.key} {...routeEl} />;
         })}
       </Route>
       <Route element={<AppLayout />}>
         {privateRoutes.map(({ element, ...otherProps }) => (
           <Route
+            key={element.key}
             element={<RequireAuth>{element}</RequireAuth>}
             {...otherProps}
           />

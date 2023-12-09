@@ -1,6 +1,6 @@
+import Header from "./Header";
 import Sidebar from "./SideBar";
 import { useState } from "react";
-import { FaBarsStaggered } from "react-icons/fa6";
 
 const AppLayout = ({ children }) => {
   const [showSideBar, setShowSideBar] = useState(false);
@@ -10,16 +10,8 @@ const AppLayout = ({ children }) => {
         <div className="w-full h-screen absolute z-[1] bg-black/40" />
       )}
       <Sidebar setShowSideBar={setShowSideBar} showSideBar={showSideBar} />
-      <div className="w-full h-screen flex flex-col gap-7 overflow-y-auto bg-black/50 p-[20px]">
-        <div className="w-full flex items-center justify-between gap-[10px]">
-          <div>Header</div>
-          <button
-            className="md:hidden flex"
-            onClick={() => setShowSideBar(!showSideBar)}
-          >
-            <FaBarsStaggered size={25} />
-          </button>
-        </div>
+      <div className="w-full h-screen flex flex-col gap-7 overflow-y-auto md:p-7 p-2 bg-foundation-blue-b-50">
+        <Header setShowSideBar={setShowSideBar} showSideBar={showSideBar} />
         {children}
       </div>
     </div>

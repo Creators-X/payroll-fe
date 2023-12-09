@@ -1,4 +1,3 @@
-import React from "react";
 import Home from "../page/Home";
 import ForgetPassword from "../page/ForgetPassword";
 import OnBoarding from "./../page/OnBoarding";
