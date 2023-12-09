@@ -12,7 +12,7 @@ function App() {
           return <Route key={routeEl.key} {...routeEl} />;
         })}
       </Route>
-      <Route element={<AppLayout />}>
+      <Route path="/" element={<AppLayout />}>
         {privateRoutes.map(({ element, ...otherProps }) => (
           <Route
             key={element.key}

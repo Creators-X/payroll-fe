@@ -8,6 +8,8 @@ export default {
         "blue-linear":
           "linear-gradient(180deg, #112D74 0%, #0C3E82 17.71%, #084B8C 35.02%, #035B99 51.56%, #0066A2 71.35%, #0B7FC3 91.67%)",
         "foundation-blue-b-50": "#E7EAF1",
+        "foundation-tblue-t-400": "#005C88",
+        "foundation-blue-b-400": "#0C1F51",
       },
       colors: {
         "blue-linear":
