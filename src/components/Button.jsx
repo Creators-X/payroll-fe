@@ -1,10 +1,10 @@
-const Button = ({ text, onClick }) => {
+const Button = ({ children, onClick }) => {
   return (
     <button
       onClick={onClick}
-      className="bg-foundation-blue-b-300 w-[191px] p-[10px] items-center justify-center rounded-[12px] text-white"
+      className="bg-foundation-blue-b-300 min-w-[191px] p-[15px] items-center justify-center rounded-[12px] text-white"
     >
-      {text}
+      {children}
     </button>
   );
 };

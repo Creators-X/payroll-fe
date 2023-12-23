@@ -13,11 +13,11 @@ const OnBoardData = ({ img, title, description, onPrev, onNext }) => {
       <div className="mt-6 p-[20px] w-full flex flex-wrap justify-between md:items-center gap-4">
         {onPrev && (
           <div className="md:mr-auto mx-auto">
-            <Button text={"Prev"} onClick={onPrev} />
+            <Button onClick={onPrev}>Prev</Button>
           </div>
         )}
         <div className="md:ml-auto mx-auto">
-          {onNext && <Button text={"Next"} onClick={onNext} />}
+          {onNext && <Button onClick={onNext}>Next</Button>}
         </div>
       </div>
     </div>
