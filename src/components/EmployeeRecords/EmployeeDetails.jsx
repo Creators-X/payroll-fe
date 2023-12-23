@@ -17,7 +17,7 @@ const EmployeeDetails = ({ onChangeState }) => {
         <BackButton onClick={handleShowAdd}>Musa Usman</BackButton>
         <Button onClick={handleDelete}>Delete Employee Record</Button>
       </header>
-      <main className="grid grid-cols-2 gap-x-[120px] gap-y-[40px] mt-5">
+      <main className="grid  lg:grid-cols-2 gap-x-[20px] grid-cols-1 lg:gap-x-[40px] xl:gap-x-[120px] gap-y-[40px] mt-5">
         <div className="bg-white py-5 px-10  rounded-lg row-start-1 row-end-3">
           <h2 className="text-[24px] font-semibold">Profile Information</h2>
           <div className="relative w-[115px] h-[115px]">
