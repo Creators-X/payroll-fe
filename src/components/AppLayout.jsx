@@ -11,7 +11,7 @@ const AppLayout = () => {
         <div className="w-full h-screen absolute z-[1] bg-black/40" />
       )}
       <Sidebar setShowSideBar={setShowSideBar} showSideBar={showSideBar} />
-      <div className="w-full h-screen flex flex-col gap-7 overflow-y-auto md:p-7 p-2 bg-foundation-blue-b-50">
+      <div className="w-full h-screen flex flex-col gap-7 overflow-y-auto md:p-7 p-2 bg-foundation-grey-g-400">
         <Header setShowSideBar={setShowSideBar} showSideBar={showSideBar} />
         <Outlet />
       </div>

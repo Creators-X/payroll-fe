@@ -9,6 +9,8 @@ export default {
         "foundation-blue-b-300": "#112D74",
         "foundation-tblue-t-400": "#005C88",
         "foundation-blue-b-400": "#0C1F51",
+        "foundation-grey-g-400": "#E7EAF1",
+
         Black: "#141414",
         grey: "#6D6D6D",
       },

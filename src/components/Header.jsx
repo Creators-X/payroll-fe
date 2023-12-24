@@ -1,4 +1,3 @@
-import React from "react";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { FaRegBell } from "react-icons/fa6";
 import profileImg from "../assets/images/profile.png";
