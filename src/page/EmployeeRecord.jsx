@@ -5,7 +5,7 @@ import AddEmployee from "../components/EmployeeRecords/AddEmployee";
 import EmployeeDetails from "../components/EmployeeRecords/EmployeeDetails";
 
 const EmployeeRecord = () => {
-  const [state, setState] = useState("addEmployee");
+  const [state, setState] = useState("records");
   return (
     <section>
       {state === "records" && <Employees onChangeState={setState} />}
