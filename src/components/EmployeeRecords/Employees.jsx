@@ -13,7 +13,7 @@ const Employees = ({ onChangeState }) => {
         </h2>
       </header>
       <main className="mt-2.5 bg-white px-5 py-4 rounded-xl">
-        <Records />
+        <Records onChangeState={onChangeState} />
       </main>
       <div className="mt-4">
         <Buttons />

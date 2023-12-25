@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { loginSchema } from "../config/schema";
-import useSubmit from "../hook/useSubmit";
+import { useState } from "react";
+import { loginSchema } from "../../config/schema";
+import useSubmit from "../../hook/useSubmit";
 import { Link } from "react-router-dom";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 

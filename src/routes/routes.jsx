@@ -1,8 +1,9 @@
-import Home from "../page/Home";
-import ForgetPassword from "../page/ForgetPassword";
-import OnBoarding from "./../page/OnBoarding";
-import Login from "./../page/Auth";
-import EmployeeRecord from "../page/EmployeeRecord";
+import Home from "../page/Home/Home";
+import ForgetPassword from "../page/ForgotPassword/ForgetPassword";
+import OnBoarding from "../page/Onboarding/OnBoarding";
+import Login from "./../page/Auth/Auth";
+import EmployeeRecord from "../page/EmployeeRecord/EmployeeRecord";
+import Settings from "../page/Settings/Settings";
 export const routes = [
   {
     key: "onboarding-process",
@@ -31,5 +32,10 @@ export const privateRoutes = [
     key: "employee-record",
     path: "/employee-record",
     element: <EmployeeRecord />,
+  },
+  {
+    key: "settings-page",
+    path: "/settings",
+    element: <Settings />,
   },
 ];
