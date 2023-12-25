@@ -1,12 +1,20 @@
 import BackButton from "../BackButton";
 import Button from "../Button";
+import { useState } from "react";
+import SuccessModal from "../SuccessModal";
 
 const AddEmployee = ({ onChangeState }) => {
+  const [showSuccess, setShowSuccess] = useState(false);
   const handleShowRecords = () => {
     onChangeState("records");
   };
-  const handleShowDetails = () => {
-    onChangeState("details");
+  const handleShowDetails = (e) => {
+    e.preventDefault();
+    setShowSuccess(true);
+  };
+  const handleClose = () => {
+    setShowSuccess(false);
+    onChangeState("records");
   };
   return (
     <div>
@@ -88,6 +96,13 @@ const AddEmployee = ({ onChangeState }) => {
           </div>
         </form>
       </main>
+      {showSuccess && (
+        <SuccessModal
+          onClick={handleClose}
+          text={"Okay"}
+          message={"Employee Added Successfully"}
+        />
+      )}
     </div>
   );
 };

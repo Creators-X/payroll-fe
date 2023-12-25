@@ -6,7 +6,7 @@ import { CiCamera } from "react-icons/ci";
 
 const EmployeeDetails = ({ onChangeState }) => {
   const handleShowAdd = () => {
-    onChangeState("addEmployee");
+    onChangeState("records");
   };
   const handleDelete = () => {
     console.log("handle Del");

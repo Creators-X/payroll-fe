@@ -1,8 +1,8 @@
 import { useState } from "react";
-import paymentInfo from "../assets/images/paymentInfo.png";
-import calendar from "../assets/images/online-calendar-rafiki.png";
-import timeManagement from "../assets/images/time-management.png";
-import OnBoardData from "../components/OnBoardData";
+import paymentInfo from "../../assets/images/paymentInfo.png";
+import calendar from "../../assets/images/online-calendar-rafiki.png";
+import timeManagement from "../../assets/images/time-management.png";
+import OnBoardData from "../../components/OnBoardData";
 import { useNavigate } from "react-router-dom";
 
 const OnBoarding = () => {
