@@ -75,7 +75,7 @@ const Sidebar = ({ showSideBar, setShowSideBar }) => {
               <FiSettings size={25} /> Settings
             </Link>
             <Link
-              to=""
+              to="/support"
               className="flex text-white text-xl gap-4 w-full items-center justify-start p-[15px]"
             >
               <MdSupport size={25} /> Support

@@ -4,6 +4,7 @@ import OnBoarding from "../page/Onboarding/OnBoarding";
 import Login from "./../page/Auth/Auth";
 import EmployeeRecord from "../page/EmployeeRecord/EmployeeRecord";
 import Settings from "../page/Settings/Settings";
+import Support from "../page/Support/Support";
 export const routes = [
   {
     key: "onboarding-process",
@@ -37,5 +38,10 @@ export const privateRoutes = [
     key: "settings-page",
     path: "/settings",
     element: <Settings />,
+  },
+  {
+    key: "suppory-page",
+    path: "/support",
+    element: <Support />,
   },
 ];
