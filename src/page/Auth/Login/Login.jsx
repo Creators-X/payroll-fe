@@ -1,20 +1,46 @@
 import { useState } from "react";
-import { loginSchema } from "../../config/schema";
-import useSubmit from "../../hook/useSubmit";
-import { Link } from "react-router-dom";
+import { loginSchema } from "../../../config/schema";
+import useSubmit from "../../../hook/useSubmit";
+import { Link, useNavigate } from "react-router-dom";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
+import api from "../../../utils/api";
+import Spinner from "../../../components/Spinner/Spinner";
+import { storeAdmin, storeAuthToken } from "../../../utils/authToken";
 
 const Auth = () => {
   const [loginError, setLoginError] = useState("");
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setPasswordVisible((prevState) => !prevState);
   };
 
   const { register, handleSubmit: newSubmit, errors } = useSubmit(loginSchema);
-  const onLogin = (data) => {
-    console.log(data);
+  const onLogin = async (data) => {
+    setLoading(true);
+    setLoginError("");
+    try {
+      const response = await api.post("/admin/login", data);
+      if (response.status === 200) {
+        storeAuthToken(response.data.token);
+        const admin = {
+          username: response.data.username || "",
+          email: response.data.email,
+        };
+
+        storeAdmin(admin);
+
+        navigate("/home");
+      }
+    } catch (error) {
+      setLoginError(
+        error.response?.data?.message || error.response?.data || error.message
+      );
+    } finally {
+      setLoading(false);
+    }
   };
   return (
     <div className="w-full max-w-[676px] mx-auto p-[20] h-screen flex flex-col gap-5 items-center justify-center ">
@@ -80,12 +106,24 @@ const Auth = () => {
         >
           Forget Password?
         </Link>
+        <div className="mt-[10px]">
+          <span className="mx-[10px] ">Don&apos;t have an account?</span>
+
+          <Link
+            className="text-foundation-blue-b-300 text-lg font-semibold"
+            to="/auth/register"
+          >
+            Register
+          </Link>
+        </div>
         <button
           //   disabled={loading}
           type="submit"
-          className="px-[30px] py-[10px] rounded-md border w-full font-bold bg-foundation-blue-b-300 max-w-[260px] mx-auto  text-white"
+          className={`px-[30px] py-[10px] rounded-md border w-full font-bold min-h-[52px] bg-${
+            loading ? "foundation-grey-g-400" : "foundation-blue-b-300"
+          } max-w-[260px] mx-auto  text-white grid place-items-center`}
         >
-          {"Sign in"}
+          {loading ? <Spinner /> : <span>Sign In</span>}
         </button>
       </form>
     </div>

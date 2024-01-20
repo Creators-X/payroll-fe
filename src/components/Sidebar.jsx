@@ -6,6 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/images/logo.svg";
 import { FaWallet } from "react-icons/fa6";
 import { LuLayoutPanelLeft, LuClipboardList } from "react-icons/lu";
+import { deleteAuthToken, removeAdmin } from "../utils/authToken";
 
 const Sidebar = ({ showSideBar, setShowSideBar }) => {
   const getSidebarItems = () => {
@@ -29,6 +30,10 @@ const Sidebar = ({ showSideBar, setShowSideBar }) => {
   };
   const sidebarItems = getSidebarItems();
   const location = useLocation();
+  const handleLogout = () => {
+    deleteAuthToken();
+    removeAdmin();
+  };
   return (
     <div
       className={`w-[80%] md:w-full h-screen blue-linear md:flex md:flex-col ${
@@ -83,6 +88,7 @@ const Sidebar = ({ showSideBar, setShowSideBar }) => {
             <Link
               to=""
               className="flex text-white text-xl gap-4 w-full items-center justify-start p-[15px]"
+              onClick={handleLogout}
             >
               <IoLogOut size={25} /> Log Out
             </Link>

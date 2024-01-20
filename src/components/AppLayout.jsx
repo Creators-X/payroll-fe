@@ -1,10 +1,11 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
-import Sidebar from "./SideBar";
+import Sidebar from "./Sidebar";
 import { useState } from "react";
 
 const AppLayout = () => {
   const [showSideBar, setShowSideBar] = useState(false);
+
   return (
     <div className="w-full h-screen grid layout relative">
       {showSideBar && (
