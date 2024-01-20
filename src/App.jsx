@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import AuthLayout from "./components/AuthLayout";
+import AuthLayout from "./page/Auth/AuthLayout";
 import AppLayout from "./components/AppLayout";
 import { privateRoutes, routes } from "./routes/routes";
 import RequireAuth from "./components/Auth/Auth";

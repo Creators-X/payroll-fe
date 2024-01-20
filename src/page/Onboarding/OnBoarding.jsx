@@ -1,13 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import paymentInfo from "../../assets/images/paymentInfo.png";
 import calendar from "../../assets/images/online-calendar-rafiki.png";
 import timeManagement from "../../assets/images/time-management.png";
 import OnBoardData from "../../components/OnBoardData";
 import { useNavigate } from "react-router-dom";
+import { getAuthToken } from "../../utils/authToken";
 
 const OnBoarding = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const navigate = useNavigate();
+  useEffect(() => {
+    if (getAuthToken()) {
+      navigate("/home");
+    }
+  }, [navigate]);
 
   const onNext = () => {
     setCurrentStep((prev) => prev + 1);
@@ -17,8 +23,8 @@ const OnBoarding = () => {
     setCurrentStep((prev) => prev - 1);
   };
 
-  const toLogin = () => {
-    navigate("/login");
+  const toRegister = () => {
+    navigate("/auth/register");
   };
 
   return (
@@ -51,7 +57,7 @@ const OnBoarding = () => {
             "Our system ensures accurate payments are made to the employees and on-time. Timely and accurate compensation isn't just a promise; it's our way of work. We ensure that workers get their dues promptly."
           }
           img={timeManagement}
-          onNext={toLogin}
+          onNext={toRegister}
           onPrev={onPrev}
         />
       )}

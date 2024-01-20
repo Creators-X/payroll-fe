@@ -1,0 +1,1 @@
+export const STORE_ADMIN = "STORE_ADMIN_DETAILS";
